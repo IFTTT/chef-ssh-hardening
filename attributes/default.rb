@@ -54,6 +54,7 @@ default['ssh']['listen_to']               = ['0.0.0.0']     # sshd
 default['ssh']['host_key_files']          = ['/etc/ssh/ssh_host_rsa_key', '/etc/ssh/ssh_host_dsa_key', '/etc/ssh/ssh_host_ecdsa_key']     # sshd
 default['ssh']['client_alive_interval']   = 600     # sshd, 10min
 default['ssh']['client_alive_count']      = 3       # sshd, ~> 3 x interval
+default['ssh']['max_auth_tries']          = 2       # sshd
 default['ssh']['remote_hosts']            = []     # ssh
 default['ssh']['allow_root_with_key']     = false   # sshd
 default['ssh']['allow_tcp_forwarding']    = false   # sshd
