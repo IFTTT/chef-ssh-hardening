@@ -129,7 +129,10 @@ GSSAPICleanupCredentials yes
 # -------
 
 # Disable TCP keep alive since it is spoofable. Use ClientAlive messages instead, they use the encrypted channel
-TCPKeepAlive no
+#TCPKeepAlive no
+# IFTTT-specific change: some people were having issues with SSH timing out, so we're adding this back in an
+# attempt to fix it. (the security implications seem pretty minimal)
+TCPKeepAlive yes
 
 # Manage `ClientAlive..` signals via interval and maximum count. This will periodically check up to a `..CountMax` number of times within `..Interval` timeframe, and abort the connection once these fail.
 ClientAliveInterval <%= @node['ssh']['client_alive_interval'] %>
